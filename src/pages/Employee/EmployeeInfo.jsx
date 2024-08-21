@@ -79,7 +79,7 @@ function EmployeeInfo() {
 
         <div className="emp-info">
           <div className="emp-key">ค่ากะ</div>
-          <div> {employeeInfo.num_of_work_date || `-`}</div>
+          <div> {employeeInfo.shift_fee || `-`}</div>
         </div>
 
         <div className="emp-info">

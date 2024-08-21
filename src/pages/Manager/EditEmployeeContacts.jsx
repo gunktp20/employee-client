@@ -1,11 +1,11 @@
-import { IoPersonAddSharp } from "react-icons/io5";
+import { MdContactPhone } from "react-icons/md";
 import { useNavigate, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { jwtDecode } from "jwt-decode";
 import NavLinksSidebar from "../../components/์NavLinksSidebar";
 
-function EditEmployee() {
+function EditEmployeeContracts() {
   const [values, setValues] = useState({
     fname: "",
     lname: "",
@@ -26,7 +26,9 @@ function EditEmployee() {
 
   const fetchEmployeeDetails = async () => {
     try {
-      const { data } = await axios.get(`http://localhost:3000/employee/${id}/manager`);
+      const { data } = await axios.get(
+        `http://localhost:3000/employee/${id}/manager`
+      );
       setValues(data);
       console.log(data);
     } catch (err) {
@@ -77,7 +79,7 @@ function EditEmployee() {
       <NavLinksSidebar />
       <div className="add-employee-form">
         <div className="title">
-          <IoPersonAddSharp /> แก้ไขข้อมูลพนักงาน
+          <MdContactPhone /> แก้ไขข้อมูลการติดต่อพนักงาน
         </div>
         <div className="note">แก้ไขข้อมูลสำหรับพนักงานของคุณ</div>
         <div className="underline"></div>
@@ -98,58 +100,27 @@ function EditEmployee() {
           onChange={handleChange}
           value={values.lname}
         ></input>
-
         <input
-          placeholder="ชื่อเล่น"
+          placeholder="เบอร์ติดต่อ"
+          name="phone_number"
+          value={values.phone_number}
           className="form-input"
-          onChange={handleChange}
-          name="nick_name"
-          value={values.nick_name}
-          type="text"
-        ></input>
-
-        <input
-          placeholder="ค่าแรง / วัน"
-          name="wage_per_date"
-          value={values.wage_per_date}
-          className="form-input"
-          type="number"
           onChange={handleChange}
         ></input>
 
         <input
-          placeholder="จำนวนวัน"
-          name="num_of_work_date"
-          value={values.num_of_work_date}
+          placeholder="LINE"
+          name="line"
+          value={values.line}
           className="form-input"
-          type="number"
           onChange={handleChange}
         ></input>
 
         <input
-          placeholder="บวกค่ากะ"
-          name="shift_fee"
-          value={values.shift_fee}
+          placeholder="E-mail"
+          name="email"
+          value={values.email}
           className="form-input"
-          type="number"
-          onChange={handleChange}
-        ></input>
-
-        <input
-          placeholder="OT / ชั่วโมง"
-          name="ot_per_hour"
-          value={values.ot_per_hour}
-          className="form-input"
-          type="number"
-          onChange={handleChange}
-        ></input>
-
-        <input
-          placeholder="จำนวนชั่วโมง OT"
-          name="num_of_ot_hours"
-          value={values.num_of_ot_hours}
-          className="form-input"
-          type="number"
           onChange={handleChange}
         ></input>
 
@@ -163,4 +134,4 @@ function EditEmployee() {
   );
 }
 
-export default EditEmployee;
+export default EditEmployeeContracts;

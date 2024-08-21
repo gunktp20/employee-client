@@ -113,11 +113,11 @@ function EmployeesManagement() {
                   <td>{emp.nick_name}</td>
                   <td>{emp.wage_per_date || `-`}</td>
                   <td>{emp.num_of_work_date || `-`}</td>
-                  <td>ค่ากะ</td>
+                  <td>{emp.shift_fee || `-`}</td>
                   <td>{emp.ot_per_hour || `-`}</td>
                   <td>{emp.num_of_ot_hours || `-`}</td>
                   <td>{emp.ot_summary || `-`}</td>
-                  <td>{emp.total_salary || `ยอดรวม`}</td>
+                  <td>{emp.total_salary || `-`}</td>
                   <td className="option-col">
                     <button
                       className="edit-btn"
